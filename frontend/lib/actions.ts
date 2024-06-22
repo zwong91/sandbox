@@ -14,7 +14,7 @@ export async function createSandbox(body: {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `${process.env.NEXT_PUBLIC_WORKERS_KEY}`,
+        Authorization: `${process.env.NEXT_PUBLIC_WORKERS_API_KEY}`,
       },
       body: JSON.stringify(body),
     }
@@ -32,7 +32,7 @@ export async function updateSandbox(body: {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      Authorization: `${process.env.NEXT_PUBLIC_WORKERS_KEY}`,
+      Authorization: `${process.env.NEXT_PUBLIC_WORKERS_API_KEY}`,
     },
     body: JSON.stringify(body),
   })
@@ -46,7 +46,7 @@ export async function deleteSandbox(id: string) {
     {
       method: "DELETE",
       headers: {
-        Authorization: `${process.env.NEXT_PUBLIC_WORKERS_KEY}`,
+        Authorization: `${process.env.NEXT_PUBLIC_WORKERS_API_KEY}`,
       },
     }
   )
@@ -61,7 +61,7 @@ export async function shareSandbox(sandboxId: string, email: string) {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `${process.env.NEXT_PUBLIC_WORKERS_KEY}`,
+        Authorization: `${process.env.NEXT_PUBLIC_WORKERS_API_KEY}`,
       },
       body: JSON.stringify({ sandboxId, email }),
     }
@@ -83,7 +83,7 @@ export async function unshareSandbox(sandboxId: string, userId: string) {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `${process.env.NEXT_PUBLIC_WORKERS_KEY}`,
+        Authorization: `${process.env.NEXT_PUBLIC_WORKERS_API_KEY}`,
       },
       body: JSON.stringify({ sandboxId, userId }),
     }

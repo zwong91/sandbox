@@ -10,7 +10,7 @@ import { and, eq, sql } from "drizzle-orm"
 export interface Env {
 	DB: D1Database
 	STORAGE: any
-	KEY: string
+	API_KEY: string
 	STORAGE_WORKER_URL: string
 }
 
@@ -34,7 +34,7 @@ export default {
 		const path = url.pathname
 		const method = request.method
 
-		if (request.headers.get("Authorization") !== env.KEY) {
+		if (request.headers.get("Authorization") !== env.API_KEY) {
 			return new Response("Unauthorized", { status: 401 })
 		}
 
@@ -72,7 +72,7 @@ export default {
 							body: JSON.stringify({ sandboxId: id }),
 							headers: {
 								"Content-Type": "application/json",
-								Authorization: `${env.KEY}`,
+								Authorization: `${env.API_KEY}`,
 							},
 						}
 					)
@@ -130,7 +130,7 @@ export default {
 						body: JSON.stringify({ sandboxId: sb.id, type }),
 						headers: {
 							"Content-Type": "application/json",
-							Authorization: `${env.KEY}`,
+							Authorization: `${env.API_KEY}`,
 						},
 					}
 				)

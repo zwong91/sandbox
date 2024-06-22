@@ -3,7 +3,7 @@ import startercode from "./startercode"
 
 export interface Env {
 	R2: R2Bucket
-	KEY: string
+	API_KEY: string
 }
 
 export default {
@@ -17,7 +17,7 @@ export default {
 		const notFound = new Response("Not Found", { status: 404 })
 		const methodNotAllowed = new Response("Method Not Allowed", { status: 405 })
 
-		if (request.headers.get("Authorization") !== env.KEY) {
+		if (request.headers.get("Authorization") !== env.API_KEY) {
 			return new Response("Unauthorized", { status: 401 })
 		}
 

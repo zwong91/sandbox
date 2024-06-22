@@ -17,7 +17,7 @@ export default async function AppAuthLayout({
     `${process.env.NEXT_PUBLIC_DATABASE_WORKER_URL}/api/user?id=${user.id}`,
     {
       headers: {
-        Authorization: `${process.env.NEXT_PUBLIC_WORKERS_KEY}`,
+        Authorization: `${process.env.NEXT_PUBLIC_WORKERS_API_KEY}`,
       },
     }
   )
@@ -30,7 +30,7 @@ export default async function AppAuthLayout({
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `${process.env.NEXT_PUBLIC_WORKERS_KEY}`,
+          Authorization: `${process.env.NEXT_PUBLIC_WORKERS_API_KEY}`,
         },
         body: JSON.stringify({
           id: user.id,

@@ -14,7 +14,7 @@ const getUserData = async (id: string) => {
     `${process.env.NEXT_PUBLIC_DATABASE_WORKER_URL}/api/user?id=${id}`,
     {
       headers: {
-        Authorization: `${process.env.NEXT_PUBLIC_WORKERS_KEY}`,
+        Authorization: `${process.env.NEXT_PUBLIC_WORKERS_API_KEY}`,
       },
     }
   )
@@ -27,7 +27,7 @@ const getSandboxData = async (id: string) => {
     `${process.env.NEXT_PUBLIC_DATABASE_WORKER_URL}/api/sandbox?id=${id}`,
     {
       headers: {
-        Authorization: `${process.env.NEXT_PUBLIC_WORKERS_KEY}`,
+        Authorization: `${process.env.NEXT_PUBLIC_WORKERS_API_KEY}`,
       },
     }
   )
@@ -46,7 +46,7 @@ const getSharedUsers = async (usersToSandboxes: UsersToSandboxes[]) => {
         `${process.env.NEXT_PUBLIC_DATABASE_WORKER_URL}/api/user?id=${user.userId}`,
         {
           headers: {
-            Authorization: `${process.env.NEXT_PUBLIC_WORKERS_KEY}`,
+            Authorization: `${process.env.NEXT_PUBLIC_WORKERS_API_KEY}`,
           },
         }
       )

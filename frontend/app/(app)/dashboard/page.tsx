@@ -15,7 +15,7 @@ export default async function DashboardPage() {
     `${process.env.NEXT_PUBLIC_DATABASE_WORKER_URL}/api/user?id=${user.id}`,
     {
       headers: {
-        Authorization: `${process.env.NEXT_PUBLIC_WORKERS_KEY}`,
+        Authorization: `${process.env.NEXT_PUBLIC_WORKERS_API_KEY}`,
       },
     }
   )
@@ -25,7 +25,7 @@ export default async function DashboardPage() {
     `${process.env.NEXT_PUBLIC_DATABASE_WORKER_URL}/api/sandbox/share?id=${user.id}`,
     {
       headers: {
-        Authorization: `${process.env.NEXT_PUBLIC_WORKERS_KEY}`,
+        Authorization: `${process.env.NEXT_PUBLIC_WORKERS_API_KEY}`,
       },
     }
   )

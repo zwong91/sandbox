@@ -21,7 +21,7 @@ export async function POST(request: NextRequest) {
     `${process.env.NEXT_PUBLIC_DATABASE_WORKER_URL}/api/user?id=${clerkUser.id}`,
     {
       headers: {
-        Authorization: `${process.env.NEXT_PUBLIC_WORKERS_KEY}`,
+        Authorization: `${process.env.NEXT_PUBLIC_WORKERS_API_KEY}`,
       },
     }
   )
