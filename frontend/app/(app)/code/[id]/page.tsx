@@ -1,7 +1,7 @@
 import Navbar from "@/components/editor/navbar"
 import { Room } from "@/components/editor/live/room"
 import { Sandbox, User, UsersToSandboxes } from "@/lib/types"
-import { currentUser } from "@clerk/nextjs"
+import { currentUser } from "@clerk/nextjs/server"
 import { notFound, redirect } from "next/navigation"
 import Loading from "@/components/editor/loading"
 import dynamic from "next/dynamic"

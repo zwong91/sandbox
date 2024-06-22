@@ -65,6 +65,11 @@ Install dependencies
 ```bash
 cd backend/database
 npm install
+npx wrangler d1 create sandbox-database
+# Applying the database schema (Delete the /backend/database/drizzle/meta)
+npm run generate
+npx wrangler d1 execute sandbox-database --remote --file=./drizzle/0000_🍏_🍐.sql
+npx wrangler deploy
 
 cd ../storage
 npm install
