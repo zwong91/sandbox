@@ -1,4 +1,4 @@
-import { UserButton, currentUser } from "@clerk/nextjs/server"
+import { currentUser } from "@clerk/nextjs/server"
 import { redirect } from "next/navigation"
 import Dashboard from "@/components/dashboard"
 import Navbar from "@/components/dashboard/navbar"
@@ -10,7 +10,8 @@ export default async function DashboardPage() {
   if (!user) {
     redirect("/")
   }
-
+  console.log(user)
+  console.log(`${process.env.NEXT_PUBLIC_DATABASE_WORKER_URL}/api/user?id=${user.id}`)
   const userRes = await fetch(
     `${process.env.NEXT_PUBLIC_DATABASE_WORKER_URL}/api/user?id=${user.id}`,
     {

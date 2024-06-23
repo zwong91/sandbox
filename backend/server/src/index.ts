@@ -30,7 +30,7 @@ import {
 
 dotenv.config();
 
-export const app: Express = express();
+const app: Express = express();
 const port = process.env.PORT || 4000;
 app.use(cors());
 const httpServer = createServer(app);

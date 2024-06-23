@@ -42,7 +42,7 @@ export default function CodeEditor({
   reactDefinitionFile: string
 }) {
   const socket = io(
-    `${process.env.NEXT_PUBLIC_SERVER_URL}?userId=${userData.id}&sandboxId=${sandboxData.id}`,
+    `http://localhost:${process.env.NEXT_PUBLIC_SERVER_PORT}?userId=${userData.id}&sandboxId=${sandboxData.id}`,
     {
       timeout: 2000,
     }
