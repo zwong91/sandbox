@@ -9,7 +9,7 @@ services = [{ binding = "STORAGE", service = "storage" }]
 # Create a new D1 database using the Wrangler CLI and fill in database_name and database_id.
 [[d1_databases]]
 binding = "DB"
-database_name = "sandbox-database"
+database_name = "d1-sandbox"
 database_id = "621464a4-7b93-4b14-9265-5db1d6721db1"
 
 # Set STORAGE_WORKER_URL after deploying the worker.

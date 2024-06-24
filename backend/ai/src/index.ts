@@ -3,7 +3,7 @@ export interface Env {
 }
 
 export default {
-	async fetch(request, env): Promise<Response> {
+	async fetch(request, env, ctx: ExecutionContext): Promise<Response> {
 		if (request.method !== "GET") {
 			return new Response("Method Not Allowed", { status: 405 })
 		}
@@ -31,8 +31,8 @@ export default {
 				},
 				{
 					role: "user",
-					content: `Suggest me code to insert at line ${line} in my file. Give only the code, and NOTHING else. DO NOT include backticks in your response. My code file content is as follows 
-          
+					content: `Suggest me code to insert at line ${line} in my file. Give only the code, and NOTHING else. DO NOT include backticks in your response. My code file content is as follows
+
 ${code}`,
 				},
 			],
