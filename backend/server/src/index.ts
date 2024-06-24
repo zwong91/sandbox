@@ -28,7 +28,7 @@ import {
   saveFileRL,
 } from "./ratelimit";
 
-dotenv.config();
+dotenv.config({ path: path.resolve(process.cwd(), '.env.local') });
 
 const app: Express = express();
 const port = process.env.PORT || 4000;
