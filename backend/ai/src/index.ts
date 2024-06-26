@@ -36,6 +36,13 @@ export default {
 ${code}`,
 				},
 			],
+		},
+		{
+			gateway: {
+			  id: "workers",
+			  skipCache: false,
+			  cacheTtl: 3360
+			}
 		})
 
 		return new Response(JSON.stringify(response))
